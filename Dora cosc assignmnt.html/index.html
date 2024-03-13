@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Countdown-timer</title>
+      <style>
+          body{
+            background-color: gold;
+            }
+      </style>
+      <style type="text/css">
+           .image
+          {
+             float:left
+          }
+      </style>
+  </head>
+  <body>
+    <center>
+      <table>
+              <br><br><br><br><br><br>
+              <img class="image" src="images/image.mp3.jpg" width="500px" height="400px">
+              <h1 style="font-size: 40px; font-family: 'Times New Roman';"><center>GIVE AWAY ON THE 11TH OF MARCH</center> </h1>
+               <p align="center" style="font-size: 18px; font-family: 'Times New Roman';">Send fifty thousad to get your's now its cheap and affordable.</p>
+               <p align="center" style="font-size: 20px; font-family: 'Times New Roman';">collect your's now, at babcock university iliesho-remo ogun state.</p>
+               <p align="center" style="font-size: 20px; font-family: 'Times New Roman';">we give phones,tablets,laptops,shirts,gowns,skirts,underwears,bags,</p>
+               <p align="center" style="font-size: 18px; font-family: 'Times New Roman';">slippers,sandals,heels,bubu,beds,boxs,chairs,table,stools.</p>
+             </p>
+              <br>
+            <div class="Countdown-timer-container">
+              <div style="font-size: 40px; font-style: oblique; font-family: 'Times New Roman';"></div>
+                <div><td id="days"><center>&ensp;&ensp;00&ensp;</center></td></div>
+                <div><td id="hours"><center>&ensp;&ensp;00&ensp;</center></td></div>
+                <div><td id="minutes"><center>&ensp;&ensp;00&ensp;</center></td></div>
+                <div><td id="seconds"><center>&ensp;&ensp;00&ensp;</center></td></div>
+
+                <tr style="font-size: 20px; font-style: oblique; font-family: 'Times New Roman';">
+                  <td><center>&ensp;days&ensp;</center></td>
+                  <td><center>&ensp;hours&ensp;</center></td>
+                  <td><center>&ensp;minutes&ensp;</center></td>
+                  <td><center>&ensp;seconds&ensp;</center></td>
+                </tr >
+            </div>
+      </table>
+    </center>
+    
+
+
+      <script>
+        
+        var countdownDate = new Date("MAR 11,2024 00:00:00").getTime();
+        var x = setInterval(function(){
+          var now = new Date().getTime();
+          var distance = countdownDate - now;
+          var days = Math.floor(distance / (1000 * 60 *60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000* 60));
+          var seconds = Math.floor((distance  % (1000 * 60)) / 1000);
+
+          document.getElementById("days").innerHTML = days
+          document.getElementById("hours").innerHTML = hours
+          document.getElementById("minutes").innerHTML = minutes
+          document.getElementById("seconds").innerHTML = seconds
+
+          if (distance < 0){
+              clearInterval(x);
+           
+
+
+              document.getElementById("demo").innerHTML = "terminated"
+        }
+        }, 1000);
+      </script>
+ </body>
+</html>
+
+
+
